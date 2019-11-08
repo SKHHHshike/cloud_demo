@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <configuration scan="true">
+        <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
+        <property name="LOG_HOME" value="D:/Idea-work/cloud_demo11/log"/>
+
+        <appender name="LOGSTASH" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder">
+                <providers>
+                    <timestamp>
+                        <timeZone>UTC</timeZone>
+                    </timestamp>
+                    <pattern>
+                        <pattern>
+                            {
+                            "ip": "${ip}",
+                            "app": "${appName}",
+                            "level": "%level",
+                            "trace": "%X{X-B3-TraceId:-}",
+                            "span": "%X{X-B3-SpanId:-}",
+                            "parent": "%X{X-B3-ParentSpanId:-}",
+                            "thread": "%thread",
+                            "class": "%logger{40}",
+                            "message": "%message",
+                            "stack_trace": "%exception{10}"
+                            　　　　　　　　　　　　　}
+                        </pattern>
+                    </pattern>
+                </providers>
+            </encoder>
+        </appender>
+
+        <springProfile name="prod">
+            <root level="info">
+                <appender-ref ref="LOGSTASH"/>
+            </root>
+        </springProfile>
+
+        <springProfile name="dev">
+            <root level="info">
+                <appender-ref ref="LOGSTASH"/>
+            </root>
+        </springProfile>
+    </configuration>

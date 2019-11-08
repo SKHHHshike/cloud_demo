@@ -11,5 +11,6 @@ public interface UserClient {
 
     @RequestMapping(value = "/{id}")
     public Result hello(@PathVariable("id") String id);
+//    public String hello(@PathVariable("id") String id);
 
 }

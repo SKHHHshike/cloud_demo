@@ -1,5 +1,6 @@
 package cn.shaines.test.controller;
 
+//import cn.shaines.test.Result;
 import cn.shaines.test.client.UserClient;
 import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class TestController {
         Result hello = userClient.hello(id);
         return hello.setData("我是调用其他微服务添加的数据.");
     }
+//    public String hello(@PathVariable("id") String id){
+//        return "我是调用其他微服务添加的数据. user id = " + id;
+//    }
 
 
 }

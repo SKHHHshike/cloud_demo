@@ -1,9 +1,5 @@
 package entity;
 
-/**
- * @author houyu
- * @createTime 2019/4/5 22:56
- */
 public class Result {
 
     public static Result build(){

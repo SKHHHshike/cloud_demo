@@ -2,7 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="cloud_demo.main" target="1.8" />
+      <module name="cloud_demo.common1.main" target="1.8" />
+      <module name="cloud_demo.common1.test" target="1.8" />
       <module name="cn.shaines.eureka.main" target="1.8" />
       <module name="cn.shaines.eureka.test" target="1.8" />
       <module name="cn.shaines.test.main" target="1.8" />
